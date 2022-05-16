@@ -16,7 +16,7 @@ export default function AddEntry() {
     if (!formState.date) return setFormError('Date is required');
     addEntry(formState);
   };
-  console.log(handleSubmit);
+
 
   return (
     <section className={styles.formWrapper}>
