@@ -7,7 +7,7 @@ export default function Header() {
     <header className={styles.header}>
       <h2>My Planner</h2>
       {/* TODO: Replace hard-coded count with the actual number of entries */}
-      <span>{entries.length}</span>
+      <span>{entries.length} Item Left</span>
     </header>
   );
 }

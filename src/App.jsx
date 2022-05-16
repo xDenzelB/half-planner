@@ -9,9 +9,9 @@ import './App.css';
 export default function App() {
   return (
     <> {/* TODO: Add PlannerProvider */}
-      <Header />
       <BrowserRouter>
       <PlannerProvider>
+      <Header />
         <Switch>
           <Route path="/entries/:id">
             <Entry />
