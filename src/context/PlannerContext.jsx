@@ -51,6 +51,20 @@ const PlannerProvider = ({ children }) => {
     return payload;
   };
 
+  const editEntry = (entry) => {
+    dispatch({
+      type: 'update',
+      entry
+    });
+  }
+
+  const deleteEntry = (entryId) => {
+    dispatch({
+      type: 'delete',
+      id: entryId
+    })
+  }
+
   const getEntry = (id) => {
     return entries.find((note) => note.id === Number(id));
   };
@@ -61,6 +75,8 @@ const PlannerProvider = ({ children }) => {
         entries,
         addEntry,
         getEntry,
+        editEntry,
+        deleteEntry,
       }}
     >
       {children}
