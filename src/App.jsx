@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import Planner from './views/Planner';
 import Header from './components/Header/Header';
 import Entry from './views/Entry';
+import { PlannerProvider } from './context/PlannerContext';
 
 import './App.css';
 
@@ -10,6 +11,7 @@ export default function App() {
     <> {/* TODO: Add PlannerProvider */}
       <Header />
       <BrowserRouter>
+      <PlannerProvider>
         <Switch>
           <Route path="/entries/:id">
             <Entry />
@@ -21,6 +23,7 @@ export default function App() {
             <Redirect to="/entries" />
           </Route>
         </Switch>
+      </PlannerProvider>
       </BrowserRouter>
     </>
   );
