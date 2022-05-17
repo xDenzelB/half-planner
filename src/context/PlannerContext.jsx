@@ -11,8 +11,10 @@ function entriesReducer(entries, { type, payload }) {
     case 'reset':
       return [...payload];
     case 'update':
-      return entries.map((entry) =>
-        entry.id === payload.id ? payload : entry
+      return entries.map((entry) => {
+        const { title, content } = payload.entry
+        return entry.id === payload.entry.id ? { ...payload.entry, title, content } : entry
+      }
       );
     case 'delete':
       return entries.filter((entry) => entry.id !== payload.id);
@@ -54,9 +56,10 @@ const PlannerProvider = ({ children }) => {
   const editEntry = (entry) => {
     dispatch({
       type: 'update',
-      entry
-    });
-  }
+      payload: { entry }
+    })
+    return entry
+  };
 
   const deleteEntry = (entryId) => {
     dispatch({
