@@ -58,6 +58,9 @@ export default function Entry() {
         <p>Due: {entry?.date}</p>
         <p>{entry?.content}</p>
         {change}
+        <button type='text' onClick={() => deleteEntry(entry.id)}>
+          Delete
+        </button>
       </article>
     </>
   );

@@ -61,10 +61,10 @@ const PlannerProvider = ({ children }) => {
     return entry
   };
 
-  const deleteEntry = (entryId) => {
+  const deleteEntry = (id) => {
     dispatch({
       type: 'delete',
-      id: entryId
+      payload: { id }
     })
   }
 
